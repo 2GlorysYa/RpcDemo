@@ -2,6 +2,8 @@ package Client;
 
 import Client.cache.ServerDiscoveryCache;
 import Client.client.ChannelProvider;
+import Client.lb.Impl.ConsistentHashLoadBalancer;
+import Client.lb.Impl.RoundRobinLoadBalancer;
 import Client.reqeust.RpcRequest;
 import Server.Service.Service;
 import Server.config.RpcError;
@@ -29,6 +31,8 @@ public class NettyClientV2 implements RpcClient{
 
     private CommonSerializer serializer;
 
+    private RpcClient rpcClient;
+
     // zooKeeper注册中心
     private ServiceRegistry serviceRegistry;
 
@@ -42,7 +46,8 @@ public class NettyClientV2 implements RpcClient{
     }
 
     public NettyClientV2() {
-        this.serviceRegistry = new ZkServiceRegistry();
+        // this.serviceRegistry = new ZkServiceRegistry(new RoundRobinLoadBalancer(), this);
+        this.serviceRegistry = new ZkServiceRegistry(this);
         this.serverDiscoveryCache = new ServerDiscoveryCache();
     };
 
@@ -96,7 +101,9 @@ public class NettyClientV2 implements RpcClient{
             // TODO 本地缓存 + 获取到服务【列表】实现负载均衡 - getServiceList()
             // TODO 为了实现节点新增或删除时自动删除缓存，需要在启动时再开一个线程来监听节点的变化
             // 先查看本地缓存的服务列表，如果有就从本地拉取，否则再查询zookeeper
+            // getServiceList(rpcRequest.getInterfaceName());
 
+            // 负载均衡
             InetSocketAddress inetSocketAddress = serviceRegistry.lookupService(rpcRequest.getInterfaceName());
             // List<InetSocketAddress> inetSocketAddresses = serviceRegistry.lookupService(rpcRequest.getInterfaceName());
             Channel channel = ChannelProvider.get(inetSocketAddress, serializer);
@@ -126,15 +133,25 @@ public class NettyClientV2 implements RpcClient{
     /**
      * 从本地缓存中查询服务列表
      */
-    private List<Service> getServiceList(String serviceName) {
-        List<Service> services;
+    private List<Service> getServiceList(String serviceName) throws RpcException {
+        List<String> serviceList;
+        // TODO 目前不打算实现
         // 查询缓存，需要加锁以保证线程安全, 以及避免获取服务后重复查询
         // synchronized (serviceName) {
         //     // 如果本地缓存中没有这个服务
         //     if (ServerDiscoveryCache.isEmpty(serviceName)) {
-        //         // services = serverDiscoveryCache.
+        //         // 向zookeeper拉取服务列表
+        //        serviceList = serviceRegistry.getServiceList(serviceName);
+        //        if (serviceList == null || serviceList.size() == 0) {
+        //            throw new RpcException(RpcError.SERVICE_NOT_FOUND);
+        //        }
+        //        serverDiscoveryCache.put(serviceName, serviceList);
+        //     } else {
+        //         // 如果本地缓存中已经有服务, 则进行负载均衡
+        //         serverDiscoveryCache
         //     }
         // }
+        return null;
 
     }
 
