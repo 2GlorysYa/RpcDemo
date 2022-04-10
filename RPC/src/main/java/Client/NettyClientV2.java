@@ -129,12 +129,12 @@ public class NettyClientV2 implements RpcClient{
     private List<Service> getServiceList(String serviceName) {
         List<Service> services;
         // 查询缓存，需要加锁以保证线程安全, 以及避免获取服务后重复查询
-        synchronized (serviceName) {
-            // 如果本地缓存中没有这个服务
-            if (ServerDiscoveryCache.isEmpty(serviceName)) {
-                // services = serverDiscoveryCache.
-            }
-        }
+        // synchronized (serviceName) {
+        //     // 如果本地缓存中没有这个服务
+        //     if (ServerDiscoveryCache.isEmpty(serviceName)) {
+        //         // services = serverDiscoveryCache.
+        //     }
+        // }
 
     }
 
