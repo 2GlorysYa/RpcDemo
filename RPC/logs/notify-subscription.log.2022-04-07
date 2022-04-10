@@ -1,0 +1,18 @@
+2022-04-08 00:06:05,793 - 调用方法: java.lang.Object#toString
+2022-04-08 00:06:06,131 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:06,196 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:06:10,990 - 调用方法: java.lang.Object#toString
+2022-04-08 00:06:10,992 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:10,994 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:06:12,877 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:06:12,906 - 调用方法: java.lang.Object#toString
+2022-04-08 00:06:12,908 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:12,911 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:06:13,983 - 调用方法: java.lang.Object#toString
+2022-04-08 00:06:13,985 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:13,986 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:06:14,529 - 调用方法: java.lang.Object#toString
+2022-04-08 00:06:14,531 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:14,533 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:06:22,177 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:06:23,244 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])

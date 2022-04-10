@@ -1,0 +1,297 @@
+2022-04-08 00:06:06,129 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x02ec6bc6, L:/127.0.0.1:9999 - R:/127.0.0.1:64478]
+2022-04-08 00:06:06,150 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:06,201 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:06:06,203 - 处理过程调用时发生了错误: 
+2022-04-08 00:06:10,992 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xe20d9a15, L:/127.0.0.1:9999 - R:/127.0.0.1:64479]
+2022-04-08 00:06:10,995 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:11,005 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:06:11,008 - 处理过程调用时发生了错误: 
+2022-04-08 00:06:12,908 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x53a50872, L:/127.0.0.1:9999 - R:/127.0.0.1:64484]
+2022-04-08 00:06:12,910 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:12,918 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:06:12,920 - 处理过程调用时发生了错误: 
+2022-04-08 00:06:13,985 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x7f6ca75e, L:/127.0.0.1:9999 - R:/127.0.0.1:64485]
+2022-04-08 00:06:13,986 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:13,992 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:06:13,994 - 处理过程调用时发生了错误: 
+2022-04-08 00:06:14,532 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x39dc0fc9, L:/127.0.0.1:9999 - R:/127.0.0.1:64487]
+2022-04-08 00:06:14,532 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:14,538 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:06:14,539 - 处理过程调用时发生了错误: 
+2022-04-08 00:06:21,789 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xd4ce5586, L:/127.0.0.1:9999 - R:/127.0.0.1:64491]
+2022-04-08 00:06:21,790 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:06:23,250 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"Server.Service.ServiceA","methodName":"hello","parameters":[{"id":12,"message":"this is netty style"}],"paramTypes":["Server.Service.HelloObjectA"]}"; line: 1, column: 2]
+2022-04-08 00:06:23,251 - 处理过程调用时发生了错误: 
+2022-04-08 00:07:15,400 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:07:15,722 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x2a4f260b, L:/127.0.0.1:9999 - R:/127.0.0.1:64525]
+2022-04-08 00:07:15,724 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:07:15,726 - [id: 0x08fd0330, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:07:15,802 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:07:15,811 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"Server.Service.ServiceA","methodName":"hello","parameters":[{"id":12,"message":"this is netty style"}],"paramTypes":["Server.Service.HelloObjectA"]}"; line: 1, column: 2]
+2022-04-08 00:07:15,812 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:05,943 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 00:10:06,184 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x272d7a7b]'
+2022-04-08 00:10:06,198 - [id: 0x272d7a7b] REGISTERED
+2022-04-08 00:10:06,199 - [id: 0x272d7a7b] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 00:10:06,202 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 00:10:11,865 - 调用方法: java.lang.Object#toString
+2022-04-08 00:10:13,095 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:13,172 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xfcec57ba, L:/127.0.0.1:9999 - R:/127.0.0.1:64584]
+2022-04-08 00:10:13,174 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:13,186 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:10:13,442 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:10:13,443 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:14,838 - 调用方法: java.lang.Object#toString
+2022-04-08 00:10:15,845 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:15,845 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x8d31772e, L:/127.0.0.1:9999 - R:/127.0.0.1:64585]
+2022-04-08 00:10:15,846 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:15,847 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:10:15,849 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:10:15,850 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:16,117 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:10:16,151 - 调用方法: java.lang.Object#toString
+2022-04-08 00:10:17,157 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:17,157 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x5bf0d243, L:/127.0.0.1:9999 - R:/127.0.0.1:64586]
+2022-04-08 00:10:17,157 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:17,158 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:10:17,160 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:10:17,161 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:17,229 - 调用方法: java.lang.Object#toString
+2022-04-08 00:10:18,234 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:18,234 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xcff9ec12, L:/127.0.0.1:9999 - R:/127.0.0.1:64590]
+2022-04-08 00:10:18,235 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:18,236 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:10:18,238 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:10:18,239 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:19,455 - 调用方法: java.lang.Object#toString
+2022-04-08 00:10:20,459 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:20,459 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x4665bdb4, L:/127.0.0.1:9999 - R:/127.0.0.1:64592]
+2022-04-08 00:10:20,459 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:20,461 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:10:20,462 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"java.lang.Object","methodName":"toString","parameters":null,"paramTypes":[]}"; line: 1, column: 2]
+2022-04-08 00:10:20,463 - 处理过程调用时发生了错误: 
+2022-04-08 00:10:21,284 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:10:21,285 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x1ad21561, L:/127.0.0.1:9999 - R:/127.0.0.1:64593]
+2022-04-08 00:10:21,285 - [id: 0x272d7a7b, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:10:21,300 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:10:21,302 - 反序列化时发生错误: Cannot construct instance of `Client.reqeust.RpcRequest` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (byte[])"{"interfaceName":"Server.Service.ServiceA","methodName":"hello","parameters":[{"id":12,"message":"this is netty style"}],"paramTypes":["Server.Service.HelloObjectA"]}"; line: 1, column: 2]
+2022-04-08 00:10:21,302 - 处理过程调用时发生了错误: 
+2022-04-08 00:13:18,682 - 调用方法: java.lang.Object#toString
+2022-04-08 00:13:24,231 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 00:13:24,553 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xb2f57c9f]'
+2022-04-08 00:13:24,571 - [id: 0xb2f57c9f] REGISTERED
+2022-04-08 00:13:24,573 - [id: 0xb2f57c9f] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 00:13:24,576 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 00:13:32,561 - 调用方法: java.lang.Object#toString
+2022-04-08 00:13:33,566 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:13:33,636 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xf3186b96, L:/127.0.0.1:9999 - R:/127.0.0.1:64752]
+2022-04-08 00:13:33,638 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:13:33,650 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:13:33,918 - 服务端接收到请求: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:14:04,194 - 处理过程调用时发生了错误: 
+2022-04-08 00:14:04,203 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:14:04,261 - 调用方法: java.lang.Object#toString
+2022-04-08 00:14:05,263 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:14:05,263 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xe1e773c9, L:/127.0.0.1:9999 - R:/127.0.0.1:64762]
+2022-04-08 00:14:05,263 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:14:05,264 - 客户端发送消息: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:14:05,266 - 服务端接收到请求: RpcRequest(interfaceName=java.lang.Object, methodName=toString, parameters=null, paramTypes=[])
+2022-04-08 00:16:29,751 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:16:30,311 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x563632b2, L:/127.0.0.1:9999 - R:/127.0.0.1:64821]
+2022-04-08 00:16:30,311 - [id: 0xb2f57c9f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:16:30,315 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:16:30,446 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:16:30,465 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:23:19,389 - 处理过程调用时发生了错误: 
+2022-04-08 00:23:19,390 - 接收到: this is netty style
+2022-04-08 00:23:19,390 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 00:29:06,339 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 00:29:06,584 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xbffd0d7a]'
+2022-04-08 00:29:06,603 - [id: 0xbffd0d7a] REGISTERED
+2022-04-08 00:29:06,605 - [id: 0xbffd0d7a] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 00:29:06,608 - [id: 0xbffd0d7a, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 00:29:13,020 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 00:29:13,339 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 00:29:13,406 - [id: 0xbffd0d7a, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x8a4bbf9e, L:/127.0.0.1:9999 - R:/127.0.0.1:65217]
+2022-04-08 00:29:13,407 - [id: 0xbffd0d7a, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 00:29:13,431 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:29:13,734 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 00:29:24,718 - 接收到: this is netty style
+2022-04-08 00:29:24,718 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 00:29:24,782 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)
+2022-04-08 15:24:20,626 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 15:24:36,242 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 15:24:36,564 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x51f9dd10]'
+2022-04-08 15:24:36,575 - [id: 0x51f9dd10] REGISTERED
+2022-04-08 15:24:36,576 - [id: 0x51f9dd10] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 15:24:36,578 - [id: 0x51f9dd10, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 15:24:40,956 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 15:24:41,228 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 15:24:41,274 - [id: 0x51f9dd10, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x2ea2eb28, L:/127.0.0.1:9999 - R:/127.0.0.1:52719]
+2022-04-08 15:24:41,275 - [id: 0x51f9dd10, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 15:24:41,306 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:24:41,506 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:24:41,507 - 接收到: this is netty style
+2022-04-08 15:24:41,507 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 15:24:49,083 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 15:24:49,421 - [id: 0x51f9dd10, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x5f318d8c, L:/127.0.0.1:9999 - R:/127.0.0.1:52723]
+2022-04-08 15:24:49,422 - [id: 0x51f9dd10, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 15:24:49,424 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 15:24:49,496 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:24:49,497 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:24:49,497 - 接收到: this is netty style
+2022-04-08 15:24:49,497 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 15:29:56,041 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 15:29:56,282 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0xe55bad97]'
+2022-04-08 15:29:56,294 - [id: 0xe55bad97] REGISTERED
+2022-04-08 15:29:56,294 - [id: 0xe55bad97] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 15:29:56,296 - [id: 0xe55bad97, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 15:30:01,310 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 15:30:01,434 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 15:30:01,451 - 发送消息时发生错误:
+io.netty.handler.codec.EncoderException: java.lang.IllegalArgumentException: No enum constant Server.serializer.SerializerCode.KRYO
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:125)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:717)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:764)
+	at io.netty.channel.AbstractChannelHandlerContext$WriteTask.run(AbstractChannelHandlerContext.java:1071)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:503)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: No enum constant Server.serializer.SerializerCode.KRYO
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at Server.serializer.SerializerCode.valueOf(SerializerCode.java:9)
+	at Server.serializer.KryoSerializer.getCode(KryoSerializer.java:78)
+	at Server.config.CommonEncoder.encode(CommonEncoder.java:33)
+	at io.netty.handler.codec.MessageToByteEncoder.write(MessageToByteEncoder.java:107)
+	... 10 more
+2022-04-08 15:30:01,475 - [id: 0xe55bad97, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x5d2a42a7, L:/127.0.0.1:9999 - R:/127.0.0.1:52810]
+2022-04-08 15:30:01,476 - [id: 0xe55bad97, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 15:30:37,332 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 15:30:37,451 - [id: 0xe55bad97, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x89cc8d16, L:/127.0.0.1:9999 - R:/127.0.0.1:52814]
+2022-04-08 15:30:37,452 - [id: 0xe55bad97, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 15:30:37,453 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 15:30:37,522 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:30:37,583 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 15:30:37,583 - 接收到: this is netty style
+2022-04-08 15:30:37,583 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 15:30:37,599 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)
+2022-04-08 17:54:35,317 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 17:54:35,487 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x3084d39c]'
+2022-04-08 17:54:35,499 - [id: 0x3084d39c] REGISTERED
+2022-04-08 17:54:35,500 - [id: 0x3084d39c] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 17:54:35,502 - [id: 0x3084d39c, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 17:54:40,150 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 17:54:40,279 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 17:54:40,320 - [id: 0x3084d39c, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x4c0a44bd, L:/127.0.0.1:9999 - R:/127.0.0.1:58788]
+2022-04-08 17:54:40,321 - [id: 0x3084d39c, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 17:54:40,346 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 17:54:40,422 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 17:54:40,422 - 接收到: this is netty style
+2022-04-08 17:54:40,422 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 17:54:40,441 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)
+2022-04-08 23:34:30,818 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 23:34:43,045 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 23:34:43,221 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x5a7a8e38]'
+2022-04-08 23:34:43,233 - [id: 0x5a7a8e38] REGISTERED
+2022-04-08 23:34:43,234 - [id: 0x5a7a8e38] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 23:34:43,236 - [id: 0x5a7a8e38, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 23:34:49,575 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 23:34:49,721 - 客户端连接到服务器127.0.0.1 : 9999
+2022-04-08 23:34:49,768 - [id: 0x5a7a8e38, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xf05cdadc, L:/127.0.0.1:9999 - R:/127.0.0.1:64919]
+2022-04-08 23:34:49,768 - [id: 0x5a7a8e38, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:34:49,804 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:34:49,887 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:34:49,887 - 接收到: this is netty style
+2022-04-08 23:34:49,887 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 23:34:49,906 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)
+2022-04-08 23:36:30,938 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 23:36:31,184 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x33c0d72f]'
+2022-04-08 23:36:31,196 - [id: 0x33c0d72f] REGISTERED
+2022-04-08 23:36:31,197 - [id: 0x33c0d72f] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 23:36:31,199 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 23:36:35,380 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 23:36:35,381 - 未设置序列化器
+2022-04-08 23:40:51,776 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 23:40:52,143 - 客户端连接成功
+2022-04-08 23:40:52,147 - Fri Apr 08 23:40:52 CST 2022:连接失败，第1次重连...
+2022-04-08 23:40:52,197 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x2850ac29, L:/127.0.0.1:9999 - R:/127.0.0.1:64983]
+2022-04-08 23:40:52,198 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:40:52,228 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:40:52,310 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:40:52,310 - 接收到: this is netty style
+2022-04-08 23:40:52,310 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 23:40:52,329 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)
+2022-04-08 23:40:54,151 - 客户端连接成功
+2022-04-08 23:40:54,151 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x6357c059, L:/127.0.0.1:9999 - R:/127.0.0.1:64984]
+2022-04-08 23:40:54,151 - Fri Apr 08 23:40:54 CST 2022:连接失败，第2次重连...
+2022-04-08 23:40:54,151 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:40:58,155 - 客户端连接成功
+2022-04-08 23:40:58,155 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x66dc40b7, L:/127.0.0.1:9999 - R:/127.0.0.1:64985]
+2022-04-08 23:40:58,155 - Fri Apr 08 23:40:58 CST 2022:连接失败，第3次重连...
+2022-04-08 23:40:58,155 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:41:06,158 - 客户端连接成功
+2022-04-08 23:41:06,158 - Fri Apr 08 23:41:06 CST 2022:连接失败，第4次重连...
+2022-04-08 23:41:06,158 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0xc5910c48, L:/127.0.0.1:9999 - R:/127.0.0.1:64986]
+2022-04-08 23:41:06,159 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:41:22,162 - 客户端连接成功
+2022-04-08 23:41:22,163 - Fri Apr 08 23:41:22 CST 2022:连接失败，第5次重连...
+2022-04-08 23:41:22,163 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x40d104ef, L:/127.0.0.1:9999 - R:/127.0.0.1:64987]
+2022-04-08 23:41:22,163 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:41:54,165 - 客户端连接成功
+2022-04-08 23:41:54,166 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x7bac809f, L:/127.0.0.1:9999 - R:/127.0.0.1:64988]
+2022-04-08 23:41:54,166 - 客户端连接失败，重试次数已用完, 放弃连接！
+2022-04-08 23:41:54,166 - [id: 0x33c0d72f, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:41:54,167 - An exception was thrown by Client.client.ChannelProvider$$Lambda$3/1468303011.operationComplete()
+Server.config.RpcException
+	at Client.client.ChannelProvider.lambda$connect$1(ChannelProvider.java:89)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:605)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:300)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:335)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2022-04-08 23:45:27,516 - 调用方法: Server.Service.ServiceA#hello
+2022-04-08 23:45:27,782 - Fri Apr 08 23:45:27 CST 2022:连接失败，第1次重连...
+2022-04-08 23:45:29,785 - Fri Apr 08 23:45:29 CST 2022:连接失败，第2次重连...
+2022-04-08 23:45:31,801 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-08 23:45:31,963 - Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x2a0e941e]'
+2022-04-08 23:45:31,975 - [id: 0x2a0e941e] REGISTERED
+2022-04-08 23:45:31,977 - [id: 0x2a0e941e] BIND: 0.0.0.0/0.0.0.0:9999
+2022-04-08 23:45:31,979 - [id: 0x2a0e941e, L:/0:0:0:0:0:0:0:0:9999] ACTIVE
+2022-04-08 23:45:33,789 - 客户端连接成功
+2022-04-08 23:45:33,848 - [id: 0x2a0e941e, L:/0:0:0:0:0:0:0:0:9999] READ: [id: 0x628b7aae, L:/127.0.0.1:9999 - R:/127.0.0.1:65041]
+2022-04-08 23:45:33,849 - [id: 0x2a0e941e, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+2022-04-08 23:45:33,874 - 客户端发送消息: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:45:33,951 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObject(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-08 23:45:33,951 - 接收到: this is netty style
+2022-04-08 23:45:33,951 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-08 23:45:33,971 - 客户端接收到消息: RpcResponse(statusCode=200, message=null, data=这时调用的返回值：id=12)

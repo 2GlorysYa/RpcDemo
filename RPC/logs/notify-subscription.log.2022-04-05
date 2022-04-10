@@ -1,0 +1,5 @@
+2022-04-05 15:45:13,467 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-05 15:57:34,079 - 向接口: [interface Server.Service.ServiceA] 注册服务：Server.Service.Impl.ServiceAImpl
+2022-04-05 16:03:07,183 - 消费者连接: /127.0.0.1:50286
+2022-04-05 16:03:07,262 - 接收到: This is a message
+2022-04-05 16:03:07,262 - 服务: Server.Service.ServiceA 成功调用方法: hello
