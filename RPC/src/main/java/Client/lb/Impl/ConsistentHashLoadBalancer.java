@@ -1,5 +1,6 @@
 package Client.lb.Impl;
 
+import Client.RpcClient;
 import Client.lb.LoadBalancer;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
@@ -16,9 +17,9 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
     private static final Logger logger = LoggerFactory.getLogger(ConsistentHashLoadBalancer.class);
 
     /**
-     * 引入10个虚拟节点到hash环
+     * 引入5个虚拟节点到hash环
      */
-    private static final int VIRTUAL_NODE_SIZE = 10;
+    private static final int VIRTUAL_NODE_SIZE = 5;
 
 
     /**
@@ -38,7 +39,7 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
     /**
      * @param addressList 需要负载均衡的服务列表
      * 哈希一致性算法, 传入客户端的hashcode
-     * 返回zookeeper对应的节点（名）
+     * 返回zookeeper对应的【节点路径】
      */
     @Override
     public String select(List<String> addressList, int hashCode) {
@@ -65,7 +66,7 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
      */
     private TreeMap<Integer, String> makeConsistentHashRing(List<String> addressList) {
         TreeMap<Integer, String> ring = new TreeMap<>();
-        // 对每个物理服务节点都构建10个虚拟节点, 并绑定在一起
+        // 对每个物理服务节点都构建5个虚拟节点, 并绑定在一起
         for (String singleServer : addressList) {
             for (int i = 0; i < VIRTUAL_NODE_SIZE; i++) {
                 // key为每个虚拟节点节点对应的hashcode，value为物理节点

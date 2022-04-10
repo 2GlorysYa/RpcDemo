@@ -1,5 +1,7 @@
 package Client.lb;
 
+import org.apache.zookeeper.ZooKeeper;
+
 import java.util.List;
 
 public interface LoadBalancer {
@@ -11,4 +13,5 @@ public interface LoadBalancer {
     String select(List<String> addressList);
 
     String select(List<String> addressList, int hashCode);
+
 }

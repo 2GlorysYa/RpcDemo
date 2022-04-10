@@ -1,5 +1,10 @@
 package Server.registry.Impl;
 
+import Client.RpcClient;
+import Client.lb.Impl.ConsistentHashLoadBalancer;
+import Client.lb.Impl.RandomLoadBalancer;
+import Client.lb.Impl.RoundRobinLoadBalancer;
+import Client.lb.LoadBalancer;
 import Server.registry.ServiceRegistry;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.zookeeper.*;
@@ -19,11 +24,36 @@ public class ZkServiceRegistry implements ServiceRegistry {
     private static final String REGISTRY_PATH = "/registry";
     private static final int SESSION_TIMEOUT = 5000;
     private ZooKeeper zk;
+    private LoadBalancer loadBalancer;
+    private RpcClient rpcClient;
 
     /**
-     * 构造时完成zooKeeper的连接
+     * 服务端使用
      */
     public ZkServiceRegistry() {
+        initializeZooKeeper();
+    };
+
+    /**
+     * 客户端使用
+     * 传入负载均衡策略
+     */
+    public ZkServiceRegistry(RpcClient rpcClient) {
+        // TODO loadbalancer, zookeeper, ZksServiceRegistry三者耦合严重，所以没有直接传lb，需要想办法处理
+        // 如果传入一个null，就默认是轮询
+        // if (loadBalancer == null) {
+        //     this.loadBalancer = new RoundRobinLoadBalancer();
+        // } else {
+        //     this.loadBalancer = loadBalancer;
+        // }
+        this.rpcClient = rpcClient;
+        initializeZooKeeper();
+    }
+
+    /**
+     * 初始化zooKeeper并建立连接
+     */
+    public void initializeZooKeeper() {
         try {
             CountDownLatch countDownLatch = new CountDownLatch(1);
             // 构建zookeeper，传入地址，timeout，监视器
@@ -88,7 +118,30 @@ public class ZkServiceRegistry implements ServiceRegistry {
     }
 
     /**
+     * 本地缓存向zookeeper查询服务列表
+     */
+    @Override
+    public List<String> getServiceList(String serviceName) {
+        List<String> addressList = null;
+        try {
+            String address;
+            String addressNode;
+            String registryPath = REGISTRY_PATH;
+            String servicePath = registryPath + "/" + serviceName;
+            // 拿到zk临时节点的path
+            addressList = zk.getChildren(servicePath, true);
+            if (CollectionUtils.isEmpty(addressList)) {
+                throw new RuntimeException(String.format(">>>无法在此路径上找到任何地址 {}", servicePath));
+            }
+        } catch (Exception e) {
+            logger.error("本地缓存获取服务列表失败 ", e);
+        }
+        return addressList;
+    }
+
+    /**
      * 客户端通过待调用的服务名来查找该服务对应的服务器地址，【为客户端侧调用】
+     * 使用负载均衡获取
      */
     @Override
     public InetSocketAddress lookupService(String serviceName) {
@@ -103,21 +156,32 @@ public class ZkServiceRegistry implements ServiceRegistry {
                 throw new RuntimeException(String.format(">>>无法在此路径上找到任何地址 {}", servicePath));
             }
 
-            // TODO 后续实现负载均衡
-            // 获取zk临时节点中第一个节点的path
-            addressNode = addressList.get(0);
-            logger.info("获得地址节点: {}", addressNode);
-            // 获取临时节点中的数据
-            // 将节点中的bytes数据转换为String
-            address = new String(zk.getData(servicePath + "/" + addressNode, true, new Stat()));
-            logger.info("服务地址为 {}", address);
-            // 分离IP和端口
-            String[] split = address.split(":");
+            loadBalancer = new ConsistentHashLoadBalancer(zk, servicePath);
 
-
-
-            // 返回待请求的服务器地址
-            return new InetSocketAddress(split[0], Integer.parseInt(split[1]));
+            // 如果是随机或轮询
+            if (loadBalancer instanceof RandomLoadBalancer || loadBalancer instanceof RoundRobinLoadBalancer) {
+                // 获取zk临时节点中第一个节点的path
+                // addressNode = addressList.get(0);
+                // 负载均衡获取服务地址
+                addressNode = loadBalancer.select(addressList);
+                logger.info("负载均衡获得地址节点: {}", addressNode);
+                // 获取临时节点中的数据
+                // 将节点中的bytes数据转换为String
+                address = new String(zk.getData(servicePath + "/" + addressNode, true, new Stat()));
+                logger.info("服务地址为 {}", address);
+                // 分离IP和端口
+                String[] split = address.split(":");
+                // 返回待请求的服务器地址
+                return new InetSocketAddress(split[0], Integer.parseInt(split[1]));
+            } else {
+                // 一致性哈希负载均衡
+                addressNode = loadBalancer.select(addressList, rpcClient.hashCode());
+                logger.info("一致性哈希负载均衡获得地址节点路径: {}", addressNode);
+                address = new String(zk.getData(servicePath + "/" + addressNode, true, new Stat()));
+                logger.info("服务地址为 {}", address);
+                String[] split = address.split(":");
+                return new InetSocketAddress(split[0], Integer.parseInt(split[1]));
+            }
         } catch (Exception e) {
             logger.error("获取服务时发生错误:", e);
             System.exit(0);

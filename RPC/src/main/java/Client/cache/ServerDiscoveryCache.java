@@ -13,12 +13,12 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ServerDiscoveryCache {
 
-    private static final Map<String, List<Service>> SERVER_MAP = new ConcurrentHashMap<>();
+    private static final Map<String, List<String>> SERVER_MAP = new ConcurrentHashMap<>();
 
     // 客户端拉取的远程服务的service class
     public static final List<String> SERVICE_CLASS_NAMES = new ArrayList<>();
 
-    public static void put(String serviceName, List<Service> serviceList) {
+    public static void put(String serviceName, List<String> serviceList) {
         SERVER_MAP.put(serviceName, serviceList);
     }
 
@@ -32,7 +32,7 @@ public class ServerDiscoveryCache {
         return SERVER_MAP.get(serviceName) == null || SERVER_MAP.get(serviceName).size() == 0;
     }
 
-    public static List<Service> get(String serviceName) {
+    public static List<String> get(String serviceName) {
         return SERVER_MAP.get(serviceName);
     }
 }

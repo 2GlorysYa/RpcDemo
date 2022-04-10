@@ -1,6 +1,7 @@
 package Server.registry;
 
 import java.net.InetSocketAddress;
+import java.util.List;
 
 public interface ServiceRegistry {
 
@@ -13,4 +14,6 @@ public interface ServiceRegistry {
      * 拉取服务
      */
     InetSocketAddress lookupService(String serviceName);
+
+    List<String> getServiceList(String serviceName);
 }

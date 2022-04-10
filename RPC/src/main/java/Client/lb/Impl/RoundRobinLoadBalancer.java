@@ -1,10 +1,14 @@
 package Client.lb.Impl;
 
 import Client.lb.LoadBalancer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class RoundRobinLoadBalancer implements LoadBalancer {
+
+    private static final Logger logger = LoggerFactory.getLogger(RoundRobinLoadBalancer.class);
 
     // 轮询计数器
     private int index = 0;
@@ -19,6 +23,7 @@ public class RoundRobinLoadBalancer implements LoadBalancer {
         if (index >= addressList.size()) {
             index = index % addressList.size();
         }
+        logger.info("当前轮询到第{}个服务器", index + 1); // 默认从0开始数
         return addressList.get(index++);
     }
 
