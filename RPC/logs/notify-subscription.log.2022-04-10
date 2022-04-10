@@ -1,0 +1,78 @@
+2022-04-11 00:36:24,118 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x7d19743f, L:/127.0.0.1:10000 - R:/127.0.0.1:63894]
+2022-04-11 00:36:24,125 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:24,202 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:24,202 - 接收到: this is netty style
+2022-04-11 00:36:24,203 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:27,236 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x22c90674, L:/127.0.0.1:10000 - R:/127.0.0.1:63899]
+2022-04-11 00:36:27,236 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:27,238 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:27,239 - 接收到: this is netty style
+2022-04-11 00:36:27,239 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:30,255 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x920ed0fa, L:/127.0.0.1:10000 - R:/127.0.0.1:63900]
+2022-04-11 00:36:30,256 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:30,258 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:30,258 - 接收到: this is netty style
+2022-04-11 00:36:30,258 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:33,274 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xfed3bf73, L:/127.0.0.1:10000 - R:/127.0.0.1:63903]
+2022-04-11 00:36:33,274 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:33,276 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:33,276 - 接收到: this is netty style
+2022-04-11 00:36:33,276 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:36,292 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x1356a800, L:/127.0.0.1:10000 - R:/127.0.0.1:63904]
+2022-04-11 00:36:36,292 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:36,296 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:36,296 - 接收到: this is netty style
+2022-04-11 00:36:36,296 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:39,314 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x0672f92c, L:/127.0.0.1:10000 - R:/127.0.0.1:63905]
+2022-04-11 00:36:39,315 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:39,318 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:39,319 - 接收到: this is netty style
+2022-04-11 00:36:39,319 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:42,340 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x6b36737e, L:/127.0.0.1:10000 - R:/127.0.0.1:63906]
+2022-04-11 00:36:42,340 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:42,342 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:42,342 - 接收到: this is netty style
+2022-04-11 00:36:42,342 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:45,019 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xed22c164, L:/192.168.50.201:10000 - R:/192.168.50.153:7482]
+2022-04-11 00:36:45,019 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:45,356 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xe249bc2a, L:/127.0.0.1:10000 - R:/127.0.0.1:63907]
+2022-04-11 00:36:45,357 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:36:45,359 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:36:45,359 - 接收到: this is netty style
+2022-04-11 00:36:45,360 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:36:53,514 - 处理过程调用时发生了错误: 
+2022-04-11 00:38:59,063 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xae40c4de, L:/192.168.50.201:10000 - R:/192.168.50.153:7614]
+2022-04-11 00:38:59,063 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:39:06,121 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:39:06,121 - 接收到: this is netty style
+2022-04-11 00:39:06,122 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:39:08,530 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x08e0afe1, L:/192.168.50.201:10000 - R:/192.168.50.153:7628]
+2022-04-11 00:39:08,531 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:39:08,541 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:39:08,541 - 接收到: this is netty style
+2022-04-11 00:39:08,541 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:40:36,397 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xbea8f070, L:/192.168.50.201:10000 - R:/192.168.50.153:7739]
+2022-04-11 00:40:36,398 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:40:43,406 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:40:43,406 - 接收到: this is netty style
+2022-04-11 00:40:43,406 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:40:45,808 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xeb026f90, L:/192.168.50.201:10000 - R:/192.168.50.153:7743]
+2022-04-11 00:40:45,808 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:40:45,841 - 服务端接收到请求: RpcRequest(interfaceName=Server.Service.ServiceA, methodName=hello, parameters=[HelloObjectA(id=12, message=this is netty style)], paramTypes=[class Server.Service.HelloObjectA])
+2022-04-11 00:40:45,841 - 接收到: this is netty style
+2022-04-11 00:40:45,841 - 服务: Server.Service.ServiceA 成功调用方法: hello
+2022-04-11 00:40:59,584 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x303b37c5, L:/192.168.50.201:10000 - R:/192.168.50.153:7806]
+2022-04-11 00:40:59,585 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:41:00,806 - 处理过程调用时发生了错误: 
+2022-04-11 00:42:25,285 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x40019c5e, L:/192.168.50.201:10000 - R:/192.168.50.153:7942]
+2022-04-11 00:42:25,285 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:42:26,629 - 处理过程调用时发生了错误: 
+2022-04-11 00:45:11,174 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xfd0738f4, L:/192.168.50.201:10000 - R:/192.168.50.153:8146]
+2022-04-11 00:45:11,174 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:45:14,958 - 处理过程调用时发生了错误: 
+2022-04-11 00:46:55,951 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0xd7fe6202, L:/192.168.50.201:10000 - R:/192.168.50.153:8267]
+2022-04-11 00:46:55,952 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:46:59,533 - 处理过程调用时发生了错误: 
+2022-04-11 00:50:22,138 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ: [id: 0x5e153b0f, L:/192.168.50.201:10000 - R:/192.168.50.153:8459]
+2022-04-11 00:50:22,138 - [id: 0x737332c2, L:/0:0:0:0:0:0:0:0:10000] READ COMPLETE
+2022-04-11 00:50:24,821 - 处理过程调用时发生了错误: 

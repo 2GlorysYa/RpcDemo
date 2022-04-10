@@ -82,10 +82,11 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
     private String buildVirtualNode(String singleServer) {
         try {
             String address = new String(zk.getData(servicePath + "/" + singleServer, true, new Stat()));
+            return address;
         } catch (Exception e) {
             logger.error("构建hash环时出现错误 ", e);
         }
-        return singleServer;
+        return null;
     }
 
     @Override

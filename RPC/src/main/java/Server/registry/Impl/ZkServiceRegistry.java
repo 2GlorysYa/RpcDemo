@@ -175,6 +175,8 @@ public class ZkServiceRegistry implements ServiceRegistry {
                 return new InetSocketAddress(split[0], Integer.parseInt(split[1]));
             } else {
                 // 一致性哈希负载均衡
+                // TODO hashcode需要重新设计，服务器是用地址path来计算而不是ip，因为都在本机上，所以hashcode太过于相近
+                // TODO 导致客户端的hashcode总是处于环的最左或最右
                 addressNode = loadBalancer.select(addressList, rpcClient.hashCode());
                 logger.info("一致性哈希负载均衡获得地址节点路径: {}", addressNode);
                 address = new String(zk.getData(servicePath + "/" + addressNode, true, new Stat()));
