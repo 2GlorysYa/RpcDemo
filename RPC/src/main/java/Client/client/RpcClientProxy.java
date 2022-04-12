@@ -48,6 +48,7 @@ public class RpcClientProxy implements InvocationHandler {
     // 重写的invocation handler中的invoke方法
     // 可以看到，当调用动态代理对象上的hello方法时，底层就是执行了invoke方法
     // 使得这个动态代理对象【替我们】向RPC服务端发出了请求，并拿到了RPC响应对象
+    @SuppressWarnings("unchecked")
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         logger.info("调用方法: {}#{}", method.getDeclaringClass().getName(), method.getName());
@@ -65,17 +66,19 @@ public class RpcClientProxy implements InvocationHandler {
         RpcRequest rpcRequest = new RpcRequest(UUID.randomUUID().toString(), method.getDeclaringClass().getName(),
                 method.getName(), args, method.getParameterTypes(), false);
         // return rpcClient.sendRequest(rpcRequest);
-        // Object result = null;
-        // if (rpcClient instanceof NettyClientV2) {
-        //     // 异步获取调用结果
-        //     CompletableFuture<RpcResponse> completableFuture = (CompletableFuture<RpcResponse>) rpcClient.sendReqeust(RpcRequest);
-        //     try {
-        //         result = completableFuture.get().getData();
-        //     } catch (InterruptedException | ExecutionException e) {
-        //         logger.error("方法调用请求发送失败", e);
-        //         return null;
-        //     }
-        // }
-        return rpcClient.sendRequest1(rpcRequest,new KryoSerializer());
+        Object result = null;
+        if (rpcClient instanceof NettyClientV2) {
+            // 异步获取调用结果
+            CompletableFuture<RpcResponse> completableFuture = (CompletableFuture<RpcResponse>) rpcClient
+                    .sendRequest2(rpcRequest,new KryoSerializer());
+            try {
+                result = completableFuture.get().getData();
+            } catch (InterruptedException | ExecutionException e) {
+                logger.error("方法调用请求发送失败", e);
+                return null;
+            }
+        }
+        return result;
+        // return rpcClient.sendRequest1(rpcRequest,new KryoSerializer());
     }
 }

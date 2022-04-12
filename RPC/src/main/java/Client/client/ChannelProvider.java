@@ -17,8 +17,8 @@ import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
 import java.util.Date;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+import java.util.Map;
+import java.util.concurrent.*;
 
 /**
  * 改造Netty Client，实现客户端连接失败重试的机制
@@ -28,6 +28,9 @@ public class ChannelProvider {
     private static final Logger logger = LoggerFactory.getLogger(ChannelProvider.class);
     private static EventLoopGroup eventLoopGroup;
     private static Bootstrap bootstrap = initializeBootstrap();
+
+    // 连接channel被封装在map里
+    private static Map<String, Channel> channels = new ConcurrentHashMap<>();
 
     // 连接重试次数
     private static final int MAX_RETRY_COUNT = 5;
@@ -51,6 +54,15 @@ public class ChannelProvider {
      *      - 该方法在NettyClientHandler类中实现
      */
     public static Channel get(InetSocketAddress inetSocketAddress, CommonSerializer serializer) {
+        String key = inetSocketAddress.toString() + serializer.getCode();
+        if (channels.containsKey(key)) {
+            Channel channel = channels.get(key);
+            if (channel != null && channel.isActive()) {
+                return channel;
+            } else {
+                channels.remove(key);
+            }
+        }
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
 
             @Override
@@ -63,20 +75,40 @@ public class ChannelProvider {
         });
         // 设置计数器为1
         // 因为增加了连接重试的机制，并不会返回ChannelFuture，因此不能简单的使用sync()
-        CountDownLatch countDownLatch = new CountDownLatch(1);
+        // CountDownLatch countDownLatch = new CountDownLatch(1);
+        Channel channel = null;
         try {
             // 这里是异步的，主线程执行connect方法这里，具体方法体的执行是由另一个异步线程执行，因此才需要sync()
-            connect(bootstrap, inetSocketAddress, countDownLatch);
+            // connect(bootstrap, inetSocketAddress, countDownLatch);
+            channel = connect(bootstrap,inetSocketAddress);
+
             // 等待连接服务器完毕
-            countDownLatch.await();
-        } catch (InterruptedException e) {
+            // countDownLatch.await();
+        } catch (InterruptedException | ExecutionException e) {
             logger.error("获取channel时发生错误", e);
+            return null;
         }
+        // 把连接放入map中
+        channels.put(key, channel);
         return channel;
     }
 
     private static void connect(Bootstrap bootstrap, InetSocketAddress inetSocketAddress, CountDownLatch countDownLatch) {
         connect (bootstrap, inetSocketAddress, MAX_RETRY_COUNT, countDownLatch);
+    }
+
+    private static Channel connect(Bootstrap bootstrap, InetSocketAddress inetSocketAddress) throws ExecutionException, InterruptedException {
+        CompletableFuture<Channel> completableFuture = new CompletableFuture<>();
+        bootstrap.connect(inetSocketAddress).addListener((ChannelFutureListener)future -> {
+           if (future.isSuccess()) {
+               logger.info("客户端连接成功");
+               // 手动调用complete完成这个任务，并使得get方法能获取到这个任务返回值
+               completableFuture.complete(future.channel());
+           }  else {
+               throw new IllegalStateException();
+           }
+        });
+        return completableFuture.get();
     }
 
     /**

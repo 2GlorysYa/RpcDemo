@@ -1,6 +1,7 @@
 package Client.handler;
 
 import Client.client.ChannelProvider;
+import Client.client.UnprocessedRequests;
 import Client.reqeust.RpcRequest;
 import Server.response.RpcResponse;
 import Server.serializer.CommonSerializer;
@@ -20,6 +21,12 @@ import java.net.InetSocketAddress;
 public class NettyClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyClientHandler.class);
+
+    private UnprocessedRequests unprocessedRequests;
+
+    public NettyClientHandler() {
+        this.unprocessedRequests = new UnprocessedRequests();
+    }
 
     /**
      * 如果5秒内write()方法未被调用则触发一次userEventTrigger()方法
@@ -59,11 +66,15 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<RpcResponse>
             logger.info(String.format("客户端接收到消息: %s", msg));
             // 生成一个AttributeKey
             // AttributeMap<AttributeKey, AttributeValue>是绑定在Channel上的，可以设置用来获取通道对象
-            AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse" + msg.getRequestId());
+            // AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse" + msg.getRequestId());
             // 把这个key set进Attribute
             // 所以等于说不是直接取出数据，而是在这里把响应数据set到属性里，然后在NettyClient里取出
-            ctx.channel().attr(key).set(msg);
-            ctx.channel().close();
+            // ctx.channel().attr(key).set(msg);
+            // ctx.channel().close();
+
+            // 将响应数据取出
+            logger.info("本次响应id:{}", msg.getRequestId());
+            unprocessedRequests.complete(msg);
         } finally {
             ReferenceCountUtil.release(msg);
         }

@@ -32,6 +32,8 @@ public class CommonDecoder extends ReplayingDecoder {
         }
 
         // 2. 再读package type，判断这是一个请求包还是响应包, 同样是4字节int
+        // 如果是请求包，则告诉是RpcRequest Class，用于序列化
+        // 如果是响应包，则告诉是RpcResponse Class，用于反序列化
         int packageCode = in.readInt();
         Class<?> packageClass;
         if (packageCode == PackageType.REQUEST_PACK.getCode()) {

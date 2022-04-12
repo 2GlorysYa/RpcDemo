@@ -17,6 +17,8 @@ import io.netty.util.AttributeKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.CompletableFuture;
+
 public class NettyClient implements RpcClient {
 
     private static final Logger logger =  LoggerFactory.getLogger(NettyClient.class);
@@ -100,6 +102,11 @@ public class NettyClient implements RpcClient {
      */
     @Override
     public Object sendRequest(RpcRequest rpcRequest, String host, int port) {
+        return null;
+    }
+
+    @Override
+    public CompletableFuture<RpcResponse> sendRequest2(RpcRequest rpcRequest, CommonSerializer serializer) throws RpcException {
         return null;
     }
 }

@@ -31,6 +31,7 @@ public class RpcResponse<T> implements Serializable {
         RpcResponse<T> response = new RpcResponse<>();
         response.setStatusCode(ResponseCode.SUCCESS.getCode());
         response.setData(data);
+        response.setRequestId(requestId);
         return response;
     }
 
@@ -45,6 +46,7 @@ public class RpcResponse<T> implements Serializable {
         RpcResponse<T> response = new RpcResponse<>();
         response.setStatusCode(code.getCode()); // 封装状态码
         response.setMessage(code.getMessage()); // 封装错误提示信息
+        response.setRequestId(requestId);
         return response;
     }
 }

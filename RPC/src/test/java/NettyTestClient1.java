@@ -18,15 +18,15 @@ public class NettyTestClient1 {
         // 这里发现实际代理的是服务对象
         // ServiceA serviceA = rpcClientProxy.getProxy(ServiceA.class);
         // 调用代理对象的hello方法，反射调用invoke
-        try {
-            for (int i = 0; i < 10; i++) {
+        // try {
+        //     for (int i = 0; i < 10; i++) {
                 ServiceA serviceA = rpcClientProxy.getProxy(ServiceA.class);
                 String res = serviceA.hello(object);
                 System.out.println(res);
-                Thread.sleep(3000);
-            }
-        } catch (InterruptedException e) {
-            logger.error("调用失败: {}", e);
-        }
+                // Thread.sleep(3000);
+            // }
+        // } catch (InterruptedException e) {
+        //     logger.error("调用失败: {}", e);
+        // }
     }
 }
