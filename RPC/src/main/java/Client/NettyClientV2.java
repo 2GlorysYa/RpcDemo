@@ -5,6 +5,7 @@ import Client.client.ChannelProvider;
 import Client.lb.Impl.ConsistentHashLoadBalancer;
 import Client.lb.Impl.RoundRobinLoadBalancer;
 import Client.reqeust.RpcRequest;
+import Client.util.RpcMessageChecker;
 import Server.Service.Service;
 import Server.config.RpcError;
 import Server.config.RpcException;
@@ -71,8 +72,10 @@ public class NettyClientV2 implements RpcClient{
                    }
                 });
                 channel.closeFuture().sync();
-                AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse");
+                AttributeKey<RpcResponse> key = AttributeKey.valueOf("rpcResponse" + rpcRequest.getRequestId());
                 RpcResponse rpcResponse = channel.attr(key).get();
+                // 检查消息是否正确，比如说请求号不匹配 / 消息状态码不是success等...
+                RpcMessageChecker.check(rpcRequest,rpcResponse);
                 return rpcResponse.getData();
             } else {
                 // 0表示”正常“退出程序，即如果当前程序还有在执行的任务，则等待所有任务执行完成以后再退出
@@ -101,7 +104,7 @@ public class NettyClientV2 implements RpcClient{
             // TODO 本地缓存 + 获取到服务【列表】实现负载均衡 - getServiceList()
             // TODO 为了实现节点新增或删除时自动删除缓存，需要在启动时再开一个线程来监听节点的变化
             // 先查看本地缓存的服务列表，如果有就从本地拉取，否则再查询zookeeper
-            // getServiceList(rpcRequest.getInterfaceName());
+            // getServiceList(rpcRequest.getInter faceName());
 
             // 负载均衡
             InetSocketAddress inetSocketAddress = serviceRegistry.lookupService(rpcRequest.getInterfaceName());

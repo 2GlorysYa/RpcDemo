@@ -2,6 +2,9 @@ package Server.serializer;
 
 public interface CommonSerializer {
 
+    // 默认的序列化器编号
+    Integer DEFAULT_SERIALIZER = new Integer(0);
+
     // 序列化为byte数组
     byte[] serialize(Object obj);
 
@@ -22,5 +25,4 @@ public interface CommonSerializer {
                 return null;
         }
     }
-
 }

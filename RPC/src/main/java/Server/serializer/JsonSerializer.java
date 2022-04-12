@@ -57,9 +57,6 @@ public class JsonSerializer implements CommonSerializer{
      * 这时就需要 RpcRequest 中的另一个字段 ParamTypes 来获取到 Object 数组中的每个实例的实际类，辅助反序列化
      * 注意【只有Json序列化会出现这种情况】，因为他的本质是将数据序列化为【Json字符串】，这样就丢失了【类型信息】
      * 而其他序列化器是把数据序列化为二进制数组，包含了类型信息
-     * @param obj
-     * @return
-     * @throws IOException
      */
     private Object handleRequest(Object obj) throws IOException {
         RpcRequest rpcRequest = (RpcRequest) obj;

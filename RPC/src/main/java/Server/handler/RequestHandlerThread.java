@@ -37,7 +37,7 @@ public class RequestHandlerThread implements Runnable{
             Object service = serviceProvider.getService(rpcRequest.getInterfaceName());
             // 调用并将结果封装到Response对象中
             Object result = requestHandler.handle(rpcRequest, service);
-            objectOutputStream.writeObject(RpcResponse.success(result));
+            objectOutputStream.writeObject(RpcResponse.success(result, rpcRequest.getRequestId()));
             objectOutputStream.flush(); // 强制清空缓存区，将数据输出
         } catch (IOException | RpcException | ClassNotFoundException e) {
             logger.error("调用或发送是出现错误: ", e);

@@ -11,6 +11,7 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.timeout.IdleStateHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +46,9 @@ public class ChannelProvider {
 
     /**
      * 返回连接以后的channel对象
+     * 并实现心跳机制
+     *      - 设定每5秒进行一次写检测，如果5秒内write()方法未被调用则触发一次userEventTrigger()方法
+     *      - 该方法在NettyClientHandler类中实现
      */
     public static Channel get(InetSocketAddress inetSocketAddress, CommonSerializer serializer) {
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
@@ -52,6 +56,7 @@ public class ChannelProvider {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
                 ch.pipeline().addLast(new CommonEncoder(serializer))
+                        .addLast(new IdleStateHandler(0, 5, 0, TimeUnit.SECONDS))
                         .addLast(new CommonDecoder())
                         .addLast(new NettyClientHandler());
             }
@@ -60,6 +65,7 @@ public class ChannelProvider {
         // 因为增加了连接重试的机制，并不会返回ChannelFuture，因此不能简单的使用sync()
         CountDownLatch countDownLatch = new CountDownLatch(1);
         try {
+            // 这里是异步的，主线程执行connect方法这里，具体方法体的执行是由另一个异步线程执行，因此才需要sync()
             connect(bootstrap, inetSocketAddress, countDownLatch);
             // 等待连接服务器完毕
             countDownLatch.await();

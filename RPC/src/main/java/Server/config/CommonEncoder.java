@@ -30,7 +30,7 @@ public class CommonEncoder extends MessageToByteEncoder {
         } else {
             out.writeInt(PackageType.RESPONSE_PACK.getCode());
         }
-        out.writeInt(serializer.getCode()); // 写入序列化器编号
+        out.writeInt(serializer.getCode()); // 写入序列化器编号，指定使用哪个序列化器，比如Kryo，protoStuff
         byte[] bytes = serializer.serialize(msg);   // 序列化
         out.writeInt(bytes.length); // 写入数据长度，防止粘包
         out.writeBytes(bytes);  // 写入数据

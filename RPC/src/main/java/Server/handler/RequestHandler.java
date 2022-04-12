@@ -45,7 +45,7 @@ public class RequestHandler {
             // 反射只需要传入【方法名】和【方法参数类型】就可以确定方法
             method = service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParamTypes());
         } catch (NoSuchMethodException e) {
-            return RpcResponse.fail(ResponseCode.METHOD_NOT_FOUND);
+            return RpcResponse.fail(ResponseCode.METHOD_NOT_FOUND, rpcRequest.getRequestId());
         }
         // 最后使用invoke调这个方法，第一个参数是在哪个实例上调方法，第二个参数是传入被调用方法的参数
         return method.invoke(service, rpcRequest.getParameters());

@@ -8,6 +8,8 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,11 +38,34 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<RpcRequest> 
     }
 
     /**
+     * 服务端心跳机制，如果30秒内没有检测到ChannelRead方法触发，则触发userEventTriggered方法
+     * 并且传入一个【空读事件】IdleStateEvent.READER_IDLE
+     * 也就是我们需要关闭连接
+     */
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        if (evt instanceof IdleStateEvent) {
+            IdleState state = ((IdleStateEvent) evt).state();
+            if (state == IdleState.READER_IDLE) {
+                logger.info("长时间未收到心跳包，断开连接...");
+                ctx.close();
+            }
+        } else {
+            super.userEventTriggered(ctx, evt);
+        }
+    }
+
+    /**
      * 如果channelRead中执行业务逻辑过久，会阻塞整个worker线程，因为channelHandler链的整个流程是同步的
      * 因此引入线程池来异步执行业务逻辑，避免阻塞
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcRequest msg) throws Exception {
+        if (msg.getHeartBeat()) {
+            logger.info("接收到客户端心跳包...");
+            return;
+        }
+        // 开启一个线程异步执行这个任务，防止channel堵塞
         executorService.submit(() -> {
             try {
                 logger.info("服务端接收到请求: {}", msg);
@@ -48,12 +73,18 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<RpcRequest> 
                 // 去注册中心拉取服务实例
                 Object service = serviceProvider.getService(interfaceName);
                 // 执行方法调用并获得调用结果
-                Object result = requestHandler.handle(msg, service);
+                Object response = requestHandler.handle(msg, service);
                 // 将响应结果写入ChannelHandler上下文
-                ChannelFuture future = ctx.writeAndFlush(RpcResponse.success(result));
+                // ChannelFuture future = ctx.writeAndFlush(RpcResponse.success(response, msg.getRequestId()));
                 // ChannelFuture future = ctx.writeAndFlush();
                 // 使用监听器监测数据包是否已发出，再关闭通道
-                future.addListener(ChannelFutureListener.CLOSE);
+                // future.addListener(ChannelFutureListener.CLOSE);
+
+                if (ctx.channel().isActive() && ctx.channel().isWritable()) {
+                    ctx.writeAndFlush(RpcResponse.success(response, msg.getRequestId()));
+                } else {
+                    logger.error("通道不可写");
+                }
             } catch (RpcException e) {
                 logger.error("拉取服务时出现异常", e);
             } finally {

@@ -1,5 +1,7 @@
 package Client.client;
 
+import Client.NettyClient;
+import Client.NettyClientV2;
 import Client.reqeust.RpcRequest;
 import Server.response.RpcResponse;
 import Client.RpcClient;
@@ -10,6 +12,9 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 // RPC客户端的实现，动态代理
 // 客户端没有接口的实现类，那么使用JDK动态代理来生成实例
@@ -55,9 +60,22 @@ public class RpcClientProxy implements InvocationHandler {
         //         .build();
         // RpcClient rpcClient = new NettyClient(); 构造器已经弄好了，别new新的，没有port和hostname
         // return ((RpcResponse) rpcClient.sendRequest(rpcRequest)).getData();
-        RpcRequest rpcRequest = new RpcRequest(method.getDeclaringClass().getName(),
-                method.getName(), args, method.getParameterTypes());
+
+        // 请求号初始化为一个UUID
+        RpcRequest rpcRequest = new RpcRequest(UUID.randomUUID().toString(), method.getDeclaringClass().getName(),
+                method.getName(), args, method.getParameterTypes(), false);
         // return rpcClient.sendRequest(rpcRequest);
+        // Object result = null;
+        // if (rpcClient instanceof NettyClientV2) {
+        //     // 异步获取调用结果
+        //     CompletableFuture<RpcResponse> completableFuture = (CompletableFuture<RpcResponse>) rpcClient.sendReqeust(RpcRequest);
+        //     try {
+        //         result = completableFuture.get().getData();
+        //     } catch (InterruptedException | ExecutionException e) {
+        //         logger.error("方法调用请求发送失败", e);
+        //         return null;
+        //     }
+        // }
         return rpcClient.sendRequest1(rpcRequest,new KryoSerializer());
     }
 }

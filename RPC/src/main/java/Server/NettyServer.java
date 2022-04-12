@@ -15,10 +15,12 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.timeout.IdleStateHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
+import java.util.concurrent.TimeUnit;
 
 public class NettyServer implements RpcServer{
 
@@ -36,6 +38,11 @@ public class NettyServer implements RpcServer{
         this.port = port;
     }
 
+    /**
+     * 启动服务器
+     * 心跳机制
+     *  - 服务端每30秒进行一次读检测，如果30秒内ChannelRead()方法没有被调用，则触发一次userEventTrigger方法
+     */
     @Override
     public void start() {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -59,6 +66,7 @@ public class NettyServer implements RpcServer{
                             ChannelPipeline pipeline = ch.pipeline();
                             // pipeline.addLast(new CommonEncoder(new JsonSerializer()))   // 出站
                             pipeline.addLast(new CommonEncoder(new KryoSerializer()))   // 出站
+                                    .addLast(new IdleStateHandler(30, 0, 0, TimeUnit.SECONDS))
                                     .addLast(new CommonDecoder())   // 入站
                                     .addLast(new NettyServerHandler(serviceProvider)); // 入站
                         }
