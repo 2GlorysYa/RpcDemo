@@ -1,9 +1,9 @@
-import Server.config.RpcException;
-import Server.registry.Impl.DefaultServiceProvider;
-import Server.registry.ServiceProvider;
-import Server.server.RpcServer;
-import Server.Service.ServiceA;
-import Server.Service.Impl.ServiceAImpl;
+import common.config.RpcException;
+import server.registry.Impl.DefaultServiceProvider;
+import server.registry.ServiceProvider;
+import server.server.RpcServer;
+import server.service.ServiceA;
+import server.service.Impl.ServiceAImpl;
 
 public class TestServer {
     public static void main(String[] args) throws RpcException {

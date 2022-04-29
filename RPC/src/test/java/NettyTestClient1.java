@@ -1,8 +1,8 @@
-import Client.NettyClientV2;
-import Client.RpcClient;
-import Client.client.RpcClientProxy;
-import Server.Service.HelloObjectA;
-import Server.Service.ServiceA;
+import client.NettyClientV2;
+import client.RpcClient;
+import client.client.RpcClientProxy;
+import server.service.HelloObjectA;
+import server.service.ServiceA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

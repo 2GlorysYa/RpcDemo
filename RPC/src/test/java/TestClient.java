@@ -1,6 +1,6 @@
-import Client.client.RpcClientProxy;
-import Server.Service.HelloObjectA;
-import Server.Service.ServiceA;
+import client.client.RpcClientProxy;
+import server.service.HelloObjectA;
+import server.service.ServiceA;
 
 public class TestClient {
 

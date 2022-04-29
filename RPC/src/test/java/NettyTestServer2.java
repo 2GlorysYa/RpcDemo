@@ -1,11 +1,9 @@
-import Server.NettyServer;
-import Server.Service.Impl.ServiceAImpl;
-import Server.Service.Impl.ServiceBImpl;
-import Server.Service.ServiceA;
-import Server.Service.ServiceB;
-import Server.config.RpcException;
-import Server.registry.Impl.DefaultServiceProvider;
-import Server.registry.ServiceProvider;
+import server.NettyServer;
+import server.service.Impl.ServiceAImpl;
+import server.service.ServiceA;
+import common.config.RpcException;
+import server.registry.Impl.DefaultServiceProvider;
+import server.registry.ServiceProvider;
 
 public class NettyTestServer2 {
     public static void main(String[] args) throws RpcException {
